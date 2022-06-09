@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:gravity="center"
+    android:background="#2B313D"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/et_phone_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="请输入云手机id"
+        android:textColorHint="#848E97"
+        android:textColor="#F5F6F7"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bt_connect"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/exit_game"
+        android:padding="5dp"
+        android:text="连接云手机"
+        android:textSize="20sp" />
+
+</LinearLayout>

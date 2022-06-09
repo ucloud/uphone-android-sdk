@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#800c212b"
+        android:orientation="vertical"
+
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户时长："
+                android:textColor="#fffef9"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_user_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 小时56分钟"
+                android:textColor="#fffef9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="+ 获得用户时长"
+                android:textColor="#faa755" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="清晰度："
+                android:textColor="#fffef9"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@+id/rg_resolution"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动"
+                    android:textColor="#ffffff"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/rb_standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/radio_button_style"
+                    android:text="标清"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/radio_button_style"
+                    android:text="高清"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_ultra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/radio_button_style"
+                    android:text="超清"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radio_button_style"
+                    android:text="蓝光"
+                    android:textColor="#ffffff"
+                    android:visibility="gone" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_network_delay"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal">
+
+
+            <CheckBox
+                android:id="@+id/cb_network_delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingLeft="5dp"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                android:text="网络延时"
+                android:textColor="#faa755"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv_network_delay_value"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="0ms"
+                android:textColor="#fffef9"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="27dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_menu"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_button_press"
+                android:gravity="center"
+                android:text="清理后台"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_home"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_button_press"
+                android:gravity="center"
+                android:text="回到桌面"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_back"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_button_press"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            />
+
+            <CheckBox
+                android:id="@+id/cb_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:paddingLeft="5dp"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                android:text="直播推流"
+                android:textColor="#faa755"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/cb_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                android:text="静音"
+                android:textColor="#faa755"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_live_addr"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:hint="请输入推流rtmp地址"
+            android:text=""
+            android:textSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/tv_exit"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_button_press"
+                android:gravity="center"
+                android:text="退出云手机"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bt_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mute"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bt_unmute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="unMute"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bt_get_pkg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get包名"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

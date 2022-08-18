@@ -21,6 +21,7 @@
 
 
         <activity
+            android:exported="true"
             android:name="com.ucloud.demo.ConnectActivity"
             android:configChanges="orientation|smallestScreenSize|screenSize|screenLayout"
             android:screenOrientation="fullUser"

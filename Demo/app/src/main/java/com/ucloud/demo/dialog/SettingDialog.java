@@ -33,14 +33,13 @@ public class SettingDialog extends Dialog {
     private RadioGroup rg_resolution;
     private RadioButton rb_standard;
     private RadioButton rb_high;
-    private RadioButton rb_ultra;
     private CheckBox cb_network_delay, cb_mute;
     private TextView tv_network_delay_value;
     private Button bt_home;
     private Button bt_menu;
     private Button bt_back;
-    private CheckBox cb_live;
-    private EditText et_live_addr;
+    private Button bt_add_volume;
+    private Button bt_dec_volume;
 
     public static final int RESOLUTION_STANDARD = 0;
     public static final int RESOLUTION_HIGH = 3;
@@ -64,35 +63,15 @@ public class SettingDialog extends Dialog {
         rg_resolution = contentView.findViewById(R.id.rg_resolution);
         rb_standard = contentView.findViewById(R.id.rb_standard);
         rb_high = contentView.findViewById(R.id.rb_high);
-        rb_ultra = contentView.findViewById(R.id.rb_ultra);
-        rb_ultra.setChecked(true);
+        rb_high.setChecked(true);
         cb_network_delay = contentView.findViewById(R.id.cb_network_delay);
         cb_mute = contentView.findViewById(R.id.cb_mute);
         tv_network_delay_value = contentView.findViewById(R.id.tv_network_delay_value);
         bt_home = contentView.findViewById(R.id.bt_home);
         bt_menu = contentView.findViewById(R.id.bt_menu);
         bt_back = contentView.findViewById(R.id.bt_back);
-        et_live_addr = contentView.findViewById(R.id.et_live_addr);
-        cb_live = contentView.findViewById(R.id.cb_live);
-
-        cb_live.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    if (!TextUtils.isEmpty(et_live_addr.getText())) {
-                        SharedPreferences sharedPreferences = activity.getSharedPreferences("ucloud_game_config", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("live_url", et_live_addr.getText().toString());
-                        editor.commit();
-                        activity.startLive(et_live_addr.getText().toString());
-                    }
-                } else {
-                    if (activity != null) {
-                        activity.stopLive();
-                    }
-                }
-            }
-        });
+        bt_add_volume = contentView.findViewById(R.id.bt_add_volume);
+        bt_dec_volume = contentView.findViewById(R.id.bt_dec_volume);
 
         rg_resolution.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -101,10 +80,7 @@ public class SettingDialog extends Dialog {
                     activity.setResolution(RESOLUTION_STANDARD);
                 } else if (rb_high.isChecked()) {
                     activity.setResolution(RESOLUTION_HIGH);
-                } else if (rb_ultra.isChecked()) {
-                    activity.setResolution(RESOLUTION_ULTRA);
                 }
-
             }
         });
 
@@ -167,6 +143,20 @@ public class SettingDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 activity.sendKeyByName("back");
+            }
+        });
+
+        bt_add_volume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.setVolume(1);
+            }
+        });
+
+        bt_dec_volume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.setVolume(-1);
             }
         });
     }
